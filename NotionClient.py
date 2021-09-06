@@ -1,14 +1,12 @@
 import requests
 from datetime import datetime
-from icalendar import Calendar
+from icalendar import Calendar, Event
 import tempfile, os
 
 class NotionClient:
 
     def __init__(self, _token):
-        self.cal = Calendar
-        self.cal.add('prodid', '-//My calendar product//mxm.dk//')
-        self.cal.add('version', '2.0')
+        self.cal = Calendar()
         self.TOKEN = _token
     
     def get_database(self, database_id):
@@ -49,11 +47,15 @@ class NotionClient:
         
         self.export_ical(events)
     
-    def export_ical(self, events):
-        # 
-        
+    def export_ical(self, items):
+        # Add events to ical
+        for item in items:
+            event = Event()
+            event.add("summary", item["title"])
+            event.add("dtstart", item["date"].date())
+            self.cal.add_component(event)
+
         # Write to disk
-        directory = tempfile.mkdtemp()
-        f = open(os.path.join(directory, 'example.ics'), 'wb')
-        f.write(self.cal.to_ical())
-        f.close()
+        with open("Notion.ics", "wb") as f:
+            f.write(self.cal.to_ical())
+            print("Completely Wrote to Disk")
