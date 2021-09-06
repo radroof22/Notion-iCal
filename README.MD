@@ -23,29 +23,29 @@ Go to (Notion API Website)[https://www.notion.so/my-integrations] and register a
 3. Invite your integration to the board
 
 ### Git Clone
-* To clone this repo, please run ...
+To clone this repo, please run ...
 `git clone https://github.com/radroof22/Notion-iCal`
 
 ### Virtual Environment
-* In order to run the virtual environment, run ...
+In order to run the virtual environment, run ...
 ```bash
 source env/bin/activate
 ```
 
 ### Environment Variables
-* This project makes use of environment variables. In order to edit the configuration for your setup, please add a `.env` file in the root directory. You must set the following environment variables...
+This project makes use of environment variables. In order to edit the configuration for your setup, please add a `.env` file in the root directory. You must set the following environment variables...
 `
 NOTION_TOKEN=############
 DATABASE_ID=##########
 `
 
 ### Run It!
-* Just run ...
+Just run ...
 `python3 main.py`
 and see Notion.ics be generated
 
 ## Add it!
-* Import the `Notion.ics` into your favorite calendar app and enjoy!
+Import the `Notion.ics` into your favorite calendar app and enjoy!
 
 ## To-DO
 * [ ] Make Quiz and Exams All Caps
