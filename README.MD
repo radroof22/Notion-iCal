@@ -44,7 +44,7 @@ Just run ...
 `python3 main.py`
 and see Notion.ics be generated
 
-## Add it!
+### Add it!
 Import the `Notion.ics` into your favorite calendar app and enjoy!
 
 ## To-DO
